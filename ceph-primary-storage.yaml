@@ -13,8 +13,9 @@ spec:
     operatorNamespace: kube-system
     clusterName: ceph-primary-storage
     cephClusterSpec:
-      cephVersion: v19.2.2
+      cephVersion:
         image: quay.io/ceph/ceph:v19.2.2
+        allowUnsupported: false
       dataDirHostPath: /var/lib/rook
       mon:
         count: 1
@@ -24,4 +25,3 @@ spec:
         useAllNodes: true
         useAllDevices: false
         devicePathFilter: "mapper/ceph--primary--storage-bluestore--.*"
-
