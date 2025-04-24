@@ -7,5 +7,5 @@ spec:
   chart: rook-ceph
   version: v1.17.0
   repo: https://charts.rook.io/release
+  targetNamespace: rook-ceph
   createNamespace: true
-  targetNamespace: kube-system
