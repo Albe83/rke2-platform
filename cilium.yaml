@@ -4,6 +4,7 @@ metadata:
   name: cilium
   namespace: kube-system
 spec:
+  bootstrap: true
   chart: cilium
   version: v1.17.3
   repo: https://helm.cilium.io
