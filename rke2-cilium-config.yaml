@@ -16,8 +16,8 @@ spec:
         replicas: 1
         service:
           type: NodePort
+        baseUrl: "/hubble/"
         ingress:
           enabled: true
           hosts:
            - 127-0-0-1.sslip.io
-        baseUrl: "/hubble/"
