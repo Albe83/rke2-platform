@@ -5,8 +5,7 @@ metadata:
   namespace: kube-system
 spec:
   chart: rook-ceph
-  createNamespace: true
-  repo: https://charts.rook.io/release
-
-  targetNamespace: kube-system
   version: v1.17.0
+  repo: https://charts.rook.io/release
+  createNamespace: true
+  targetNamespace: kube-system
