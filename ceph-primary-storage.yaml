@@ -19,6 +19,14 @@ spec:
       dataDirHostPath: /var/lib/rook
       mon:
         count: 1
+        allowMultiplePerNode: true
+        resources:
+          requests:
+            memory: 512Mi
+            cpu: 250m
+          limits:
+            memory: 1Gi
+            cpu: 500m
       mgr:
         count: 1
       storage:
