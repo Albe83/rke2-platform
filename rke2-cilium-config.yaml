@@ -9,10 +9,10 @@ spec:
       replicas: 1
     hubble:
       enabled: true
-      replicas: 1
       relay:
         enabled: true
       ui:
         enabled: true
+        replicas: 1
         service:
           type: NodePort
