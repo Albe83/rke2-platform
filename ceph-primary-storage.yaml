@@ -1,0 +1,26 @@
+apiVersion: helm.cattle.io/v1
+kind: HelmChart
+metadata:
+  name: ceph-primary-storage
+  namespace: kube-system
+spec:
+  chart: rook-ceph-cluster
+  version: "v1.17.1"
+  repo: "https://charts.rook.io/release"
+  targetNamespace: kube-system
+  createNamespace: true
+  valuesContent: |-
+    operatorNamespace: kube-system
+    clusterName: ceph-primary-storage
+    cephClusterSpec:
+      cephVersion: v19.2.2
+      dataDirHostPath: /var/lib/rook
+      mon:
+        count: 1
+      mgr:
+        count: 1
+      storage:
+        useAllNodes: true
+        useAllDevices: false
+        devicePathFilter: "mapper/ceph--primary--storage-bluestore--.*"
+
