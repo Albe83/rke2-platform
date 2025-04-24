@@ -12,8 +12,6 @@ spec:
       replicas: 1
       relay:
         enabled: true
-        service:
-          type: NodePort
       ui:
         enabled: true
         service:
