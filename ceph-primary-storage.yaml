@@ -7,10 +7,10 @@ spec:
   chart: rook-ceph-cluster
   version: "v1.17.1"
   repo: "https://charts.rook.io/release"
-  targetNamespace: kube-system
+  targetNamespace: rook-ceph
   createNamespace: true
   valuesContent: |-
-    operatorNamespace: kube-system
+    operatorNamespace: rook-ceph
     clusterName: ceph-primary-storage
     cephClusterSpec:
       cephVersion:
