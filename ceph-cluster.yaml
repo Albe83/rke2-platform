@@ -58,5 +58,6 @@ spec:
     cephObjectStores: {}
     ingress:
       dashboard:
+        enabled: true
         ingressClassName: "standard"
         path: "/ceph-cluster"
