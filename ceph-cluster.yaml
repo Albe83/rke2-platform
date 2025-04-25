@@ -22,6 +22,11 @@ spec:
       dashboard:
         enabled: true
         ssl: false
+        urlPrefix: "/ceph-cluster"
+      ingress:
+        dashboard:
+          ingressClassName: "standard"
+          path: "/ceph-cluster"
       mon:
         count: 1
         allowMultiplePerNode: true
@@ -34,3 +39,22 @@ spec:
         config:
           osdPoolDefaultSize: "1"
           osdPoolDefaultMinSize: "1"
+    cephBlockPools:
+      - name: blk-single-replica
+        spec:
+          failureDomain: host
+          replicated:
+            size: 1
+    storageClass:
+      enabled: true
+      name: blk-single-replica
+      isDefault: true
+      reclaimPolicy: Delete
+      allowVolumeExpansion: true
+      volumeBindingMode: Immediate
+      parameters:
+        blockPool: blk-single-replica
+        clusterID: ceph-cluster
+        fstype: ext4
+        imageFeatures: layering
+      provisioner: rook-ceph.rbd.csi.ceph.com
