@@ -17,6 +17,12 @@ spec:
         image: quay.io/ceph/ceph:v19.2.2
         allowUnsupported: false
       dataDirHostPath: /var/lib/rook
+      dashboard:
+        enabled: true
+        ssl: false
+        service:
+          type: NodePort
+          nodePort: 32080
       mon:
         count: 1
         allowMultiplePerNode: true
@@ -26,3 +32,6 @@ spec:
         useAllNodes: true
         useAllDevices: false
         devicePathFilter: "mapper/ceph--primary--storage-bluestore--.*"
+        config:
+          osdPoolDefaultSize: 1
+          osdPoolDefaultMinSize: 1
