@@ -1,7 +1,7 @@
 apiVersion: helm.cattle.io/v1
 kind: HelmChart
 metadata:
-  name: ceph-primary-storage
+  name: ceph-cluster
   namespace: kube-system
 spec:
   chart: rook-ceph-cluster
@@ -11,7 +11,7 @@ spec:
   createNamespace: true
   valuesContent: |-
     operatorNamespace: rook-ceph
-    clusterName: ceph-primary-storage
+    clusterName: ceph-cluster
     cephClusterSpec:
       cephVersion:
         image: quay.io/ceph/ceph:v19.2.2
