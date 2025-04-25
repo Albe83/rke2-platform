@@ -58,3 +58,5 @@ spec:
             fstype: ext4
             imageFeatures: layering
           provisioner: rook-ceph.rbd.csi.ceph.com
+    cephFileSystems: {}
+    cephObjectStores: {}
