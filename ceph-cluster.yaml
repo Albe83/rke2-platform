@@ -1,7 +1,7 @@
 apiVersion: helm.cattle.io/v1
 kind: HelmChart
 metadata:
-  name: ceph-cluster
+  name: ceph-primary-storage
   namespace: kube-system
 spec:
   chart: rook-ceph-cluster
@@ -39,5 +39,5 @@ spec:
         useAllDevices: false
         devicePathFilter: "mapper/ceph--primary--storage-bluestore--.*"
         config:
-          osdPoolDefaultSize: 1
-          osdPoolDefaultMinSize: 1
+          osdPoolDefaultSize: "1"
+          osdPoolDefaultMinSize: "1"
