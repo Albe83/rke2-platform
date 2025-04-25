@@ -23,10 +23,6 @@ spec:
         enabled: true
         ssl: false
         urlPrefix: "/ceph-cluster"
-    ingress:
-      dashboard:
-        ingressClassName: "standard"
-        path: "/ceph-cluster"
       mon:
         count: 1
         allowMultiplePerNode: true
@@ -60,3 +56,7 @@ spec:
           provisioner: rook-ceph.rbd.csi.ceph.com
     cephFileSystems: {}
     cephObjectStores: {}
+    ingress:
+      dashboard:
+        ingressClassName: "standard"
+        path: "/ceph-cluster"
