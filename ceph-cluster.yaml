@@ -37,7 +37,7 @@ spec:
       storage:
         useAllNodes: true
         useAllDevices: false
-        devicePathFilter: "mapper/ceph--primary--storage-bluestore--.*"
+        devicePathFilter: "mapper/ceph--cluster-bluestore--.*"
         config:
           osdPoolDefaultSize: "1"
           osdPoolDefaultMinSize: "1"
