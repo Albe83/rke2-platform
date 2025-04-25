@@ -23,10 +23,10 @@ spec:
         enabled: true
         ssl: false
         urlPrefix: "/ceph-cluster"
-      ingress:
-        dashboard:
-          ingressClassName: "standard"
-          path: "/ceph-cluster"
+    ingress:
+      dashboard:
+        ingressClassName: "standard"
+        path: "/ceph-cluster"
       mon:
         count: 1
         allowMultiplePerNode: true
