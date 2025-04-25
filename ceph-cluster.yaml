@@ -11,6 +11,8 @@ spec:
   createNamespace: true
   valuesContent: |-
     operatorNamespace: rook-ceph
+    toolbox:
+      enabled: true
     clusterName: ceph-cluster
     cephClusterSpec:
       cephVersion:
