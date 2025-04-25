@@ -60,4 +60,6 @@ spec:
       dashboard:
         enabled: true
         ingressClassName: "standard"
-        path: "/ceph-cluster"
+        host:
+          pathType: Prefix
+          path: "/ceph-cluster(/|$)(.*)"
