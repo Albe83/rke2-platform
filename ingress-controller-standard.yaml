@@ -1,0 +1,42 @@
+apiVersion: helm.cattle.io/v1
+kind: HelmChart
+metadata:
+  name: ingress-controller-standard
+  namespace: kube-system
+spec:
+  repo: https://kubernetes.github.io/ingress-nginx
+  chart: ingress-controller-standard
+  version: 4.12.1
+  targetNamespace: ingress-controller
+  createNamespace: true
+  valuesContent: |-
+    controller:
+      replicaCount: 1
+      ingressClassResource:
+        name: standard
+        enabled: true
+        default: true
+      admissionWebhooks:
+        enabled: true
+      metrics:
+        enabled: true
+        serviceMonitor:
+          enabled: true
+      service:
+        type: NodePort
+      resources:
+        requests:
+          cpu: 200m
+          memory: 256Mi
+        limits:
+          cpu: 500m
+          memory: 512Mi
+    defaultBackend:
+      enabled: true
+      resources:
+        requests:
+          cpu: 50m
+          memory: 64Mi
+        limits:
+          cpu: 100m
+          memory: 128Mi
