@@ -20,9 +20,6 @@ spec:
       dashboard:
         enabled: true
         ssl: false
-        service:
-          type: NodePort
-          nodePort: 32080
       mon:
         count: 1
         allowMultiplePerNode: true
