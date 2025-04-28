@@ -4,8 +4,9 @@ metadata:
   name: rook-operator
   namespace: kube-system
 spec:
-  chart: rook-ceph
+  chart: rook-operator
   version: v1.17.1
   repo: https://charts.rook.io/release
   targetNamespace: rook-ceph
   createNamespace: true
+  installCRDs: true
