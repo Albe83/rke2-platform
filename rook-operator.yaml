@@ -9,7 +9,6 @@ spec:
   repo: https://charts.rook.io/release
   targetNamespace: rook-ceph
   createNamespace: true
-  installCRDs: false
   valuesContent: |-
     crds:
       enabled: true
